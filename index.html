@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CN5201 Tutorial 5 | Dijkstra Shortest Path Calculater</title>
+
+        <link rel="stylesheet" href="ui_assets/bootstrap.min.css">
+    </head>
+
+    <body class="pt-5 bg-light">
+        <div class="container mt-5 pt-5">
+            <div class="row">
+                <div class="col-md-4 offset-md-4 text-center">
+                    <div class="card shadow">
+                        <div class="card-header">
+                            <b>Dijkstra Shortest Path Calculater</b>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div id="inputFileContainer" class="col-12 mt-2 mb-4">
+                                    <div>
+                                        <label class="form-label w-100">
+                                            Input File
+                                            <input id="inputFile" type='file' class="form-control text-center mt-3" accept='text/plain' onchange='openFile(event)'>
+                                        </label>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="col-md-6 my-3">
+                                    <div>
+                                        <label class="form-label w-100">
+                                            Starting Node
+                                            <input type="text" class="form-control text-center mt-3" id="starting_node" required>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-3">
+                                    <div>
+                                        <label class="form-label w-100">
+                                            End Node
+                                            <input type="text" class="form-control text-center mt-3" id="end_node" required>
+                                        </label>
+                                    </div>  
+                                </div>
+                            </div>
+                            <div>
+                                <hr>
+                                <button type="button" onclick="calculateShortestPath()" class="btn btn-primary">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="result" class="alert alert-success mt-4 text-left" style="display: none">
+                        <div id="result-row" class="row">
+                        </div>
+                    </div>
+
+                    <div id="error" class="alert alert-danger mt-4 text-left" style="display: none">
+                        <div id="error-row" class="row">
+                        </div>
+                    </div>                    
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="display"></id>
+
+        <script>let graph = []</script>
+        <script src="ui_assets/popper.min.js"></script>
+        <script src="ui_assets/bootstrap.min.js"></script>
+        <script src="file_handler.js"></script>
+        <script src="dijkstra.js"></script>
+    </body>
+
+</html>
