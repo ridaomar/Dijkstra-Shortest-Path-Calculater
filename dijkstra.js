@@ -75,11 +75,13 @@ function calculateShortestPath() {
     
 
     if( document.querySelector("#inputFile").files.length == 0 ){
+        document.querySelector("#result").style.display = "none";
         document.querySelector("#error-row").innerHTML = "<b>Please select a file! </b>";
         document.querySelector("#error").style.display = "block";
         return;
     } else if (start == "" || end == "")
     {
+        document.querySelector("#result").style.display = "none";
         document.querySelector("#error-row").innerHTML = "<b>Please make sure all fields are filled in correctly! </b>";
         document.querySelector("#error").style.display = "block";
         return;
