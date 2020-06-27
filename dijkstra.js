@@ -90,6 +90,13 @@ function calculateShortestPath() {
 
     let [path,length] = dijkstra(graph, start, end);
 
+    if (length == 0) {
+        document.querySelector("#result").style.display = "none";
+        document.querySelector("#error-row").innerHTML = "<b>Please make sure all fields are filled in correctly! </b>";
+        document.querySelector("#error").style.display = "block";
+        return;        
+    }
+
     document.querySelector("#error").style.display = "none";
     document.querySelector("#result-row").innerHTML = "<div class='col-md-9'><b>Shortest path </b>= (" + path + ")</div> <div class='col-md-3 text-right'> <b>Cost</b> = " + length + "</div>";
     document.querySelector("#result").style.display = "block";
